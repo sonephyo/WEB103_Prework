@@ -20,14 +20,15 @@ const ShowCreators = () => {
       {creators.length != 0 ? (
         <div>
           {creators.map((item, index) => (
-            <li key={index}>
+            <div key={index}>
               <ContentCreator
+                id={item.id}
                 name={item.name}
                 url={item.url}
                 description={item.description}
                 imageURL={item.imageURL}
               />
-            </li>
+            </div>
           ))}
         </div>
       ) : (

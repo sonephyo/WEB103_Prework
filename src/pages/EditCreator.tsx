@@ -1,4 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { supabase } from "../client";
+import { useNavigate, useParams } from "react-router";
+import type { Creator } from "../types/creator";
 
 const EditCreator = () => {
   const [name, setname] = useState<string>("");
@@ -6,13 +9,56 @@ const EditCreator = () => {
   const [description, setdescription] = useState<string>("");
   const [imageURL, setimageURL] = useState<string>("");
 
+  const params = useParams();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchCreators = async () => {
+      const { data, error } = await supabase
+        .from("creators")
+        .select("*")
+        .eq("id", params.id)
+        .single<Creator>();
+      if (error) {
+        console.log("Error Fetching creators:", error);
+      } else {
+        setname(data.name);
+        seturl(data.url);
+        setdescription(data.description);
+        setimageURL(data.imageURL);
+      }
+    };
+    fetchCreators();
+  }, [params.id]);
+
+  const updateChange = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const { error } = await supabase.from("creators").update({
+      name: name,
+      url: url,
+      description: description,
+      imageURL: imageURL,
+    })
+    .eq("id", params.id)
+    .select()
+    .single();
+
+    if (error) {
+        console.error("Error updating creator: ", error)
+    }
+
+    alert("Successfully updated")
+    
+    navigate(`/view/${params.id}`)
+  };
+
   return (
     <div style={{ width: "50%", marginLeft: "auto", marginRight: "auto" }}>
       <div>
-        <h2>Add a new Content Creator</h2>
-      </div>
-      <div>
-        <form style={{ display: "flex", flexDirection: "column" }}>
+        <form
+          onSubmit={updateChange}
+          style={{ display: "flex", flexDirection: "column" }}
+        >
           <label>
             CreatorName:
             <input
@@ -46,14 +92,11 @@ const EditCreator = () => {
           </label>
           <button
             type="submit"
-            onClick={() => {
-              // TODO: Add submit function to supabase
-            }}
             style={{
               width: "10rem",
             }}
           >
-            Submit
+            Update
           </button>
         </form>
       </div>
