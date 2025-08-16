@@ -17,9 +17,9 @@ const ContentCreator: React.FC<Creator> = ({
       {imageURL && <img src={imageURL} alt={name} />}
       <p className="name">{name}</p>
       <a href={url} className="url" target="_blank" rel="noopener noreferrer">
-        {url}
+        {url.length >= 20 ? url.substring(0, 20) + "..." : url}
       </a>
-      <p className="description">{description}</p>
+      <p className="description">{description.length >= 20 ? description.substring(0, 20) + "..." : description}</p>
     </div>
   );
 };

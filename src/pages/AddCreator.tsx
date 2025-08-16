@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { supabase } from "../client";
+import { useNavigate } from "react-router";
 
 const AddCreator = () => {
   const [name, setname] = useState<string>("");
   const [url, seturl] = useState<string>("");
   const [description, setdescription] = useState<string>("");
   const [imageURL, setimageURL] = useState<string>("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     if (name == "" || url == "" || description == "" || imageURL == "") {
       alert("Please fill out all the information before submitting");
       return;
@@ -26,6 +28,7 @@ const AddCreator = () => {
     } else {
       console.log("Creator added: ", data);
       alert("Creator added successfully");
+      navigate("/all");
     }
   };
 
