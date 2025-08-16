@@ -1,0 +1,36 @@
+/* App.css */
+.card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 300px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 16px auto;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.card .name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card .url {
+  color: #1a0dab;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.card .description {
+  font-size: 14px;
+  color: #555;
+}
