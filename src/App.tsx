@@ -10,11 +10,29 @@ function App() {
     {
       path: "/",
       element: (
-        <div>
-          <p>Welcome to ContentCreators Platform.</p>
-          <div>
-            <Link to="/all">Show all Creators</Link>
-            <Link to="/add">Add a new Creator</Link>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            maxWidth: "50vw",
+            margin: "16px auto"
+          }}
+        >
+          <h1>Welcome to ContentCreators Platform.</h1>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              flexDirection: "column",
+              gap: "1rem"
+            }}
+          >
+            <button className="my-button">
+              <Link to="/all">Show all Creators</Link>
+            </button>
+            <button className="my-button">
+              <Link to="/add">Add a new Creator</Link>
+            </button>
           </div>
           <Outlet />
         </div>

@@ -57,7 +57,7 @@ const EditCreator = () => {
       <div>
         <form
           onSubmit={updateChange}
-          style={{ display: "flex", flexDirection: "column" }}
+          style={{ display: "flex", flexDirection: "column", gap: "1rem"}}
         >
           <label>
             CreatorName:
@@ -65,6 +65,7 @@ const EditCreator = () => {
               type="text"
               value={name}
               onChange={(e) => setname(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>
           <label>
@@ -73,6 +74,7 @@ const EditCreator = () => {
               type="text"
               value={url}
               onChange={(e) => seturl(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>{" "}
           <label>
@@ -80,6 +82,7 @@ const EditCreator = () => {
             <textarea
               value={description}
               onChange={(e) => setdescription(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>{" "}
           <label>
@@ -88,6 +91,7 @@ const EditCreator = () => {
               type="text"
               value={imageURL}
               onChange={(e) => setimageURL(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>
           <button

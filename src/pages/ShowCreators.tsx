@@ -16,7 +16,9 @@ const ShowCreators = () => {
 
   return (
     <div>
-      <p>All Creators</p>
+      <h2 style={{
+        margin: "16px auto"
+      }}>All Creators</h2>
       {creators.length != 0 ? (
         <div>
           {creators.map((item, index) => (

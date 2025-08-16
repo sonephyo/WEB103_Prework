@@ -39,7 +39,7 @@ const AddCreator = () => {
       </div>
       <div>
         <form
-          style={{ display: "flex", flexDirection: "column" }}
+          style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
           onSubmit={handleSubmit}
         >
           <label>
@@ -48,6 +48,7 @@ const AddCreator = () => {
               type="text"
               value={name}
               onChange={(e) => setname(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>
           <label>
@@ -56,6 +57,7 @@ const AddCreator = () => {
               type="text"
               value={url}
               onChange={(e) => seturl(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>{" "}
           <label>
@@ -63,6 +65,7 @@ const AddCreator = () => {
             <textarea
               value={description}
               onChange={(e) => setdescription(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>{" "}
           <label>
@@ -71,6 +74,7 @@ const AddCreator = () => {
               type="text"
               value={imageURL}
               onChange={(e) => setimageURL(e.target.value)}
+              style={{width: "100%"}}
             />
           </label>
           <button
