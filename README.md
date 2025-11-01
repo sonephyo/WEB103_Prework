@@ -2,7 +2,7 @@
 
 Submitted by: Phone Pyae Sone Phyo
 
-About this web app: Allow people all over the world to edit and make changes to the content creators from all around the world
+About this web app: Allow people all over the world to edit and make changes to the content creators from all around the world.
 
 Time spent: 3 hours
 
