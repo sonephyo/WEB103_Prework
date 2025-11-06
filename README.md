@@ -10,6 +10,7 @@ Time spent: 3 hours
 
 The following **required** functionality is completed:
 
+
 <!-- 👉🏿👉🏿👉🏿 Make sure to check off completed functionality below -->
 - [x] **A logical component structure in React is used to create the frontend of the app**
 - [x] **At least five content creators are displayed on the homepage of the app**
